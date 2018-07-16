@@ -7,7 +7,7 @@ used in the build-process (build.py) or the Node.js utility scripts (nodejs.py)
 # Node.js settings
 #-----------------------------------------------------------------------
 # [user-setting] you can change this if you plan to use a different Node.js version for the J2V8 build
-NODE_VERSION_MAJOR, NODE_VERSION_MINOR, NODE_VERSION_PATCH = 8, 10, 1
+NODE_VERSION_MAJOR, NODE_VERSION_MINOR, NODE_VERSION_PATCH = 8, 11, 3
 
 # The Node.js version in the format {major.minor.patch} to be used in other build & utility scripts
 NODE_VERSION = '{}.{}.{}'.format(NODE_VERSION_MAJOR, NODE_VERSION_MINOR, NODE_VERSION_PATCH)
