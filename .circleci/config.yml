@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  one:
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: |
+        source j2v8-cli.sh
+        nodejs git clone
+        nodejs diff apply
+        python build.py --target android --docker
+  two:
+    steps:
+      - checkout
+      - run: echo "hi"
+workflows:
+  version: 2
+  one_and_two:
+    jobs:
+      - one
+      - two
