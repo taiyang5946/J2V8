@@ -4,11 +4,13 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: |
-        source j2v8-cli.sh
-        nodejs git clone
-        nodejs diff apply
-        python build.py --target android --docker
+      - run:
+          name: Android build
+          command: |
+            source j2v8-cli.sh
+            nodejs git clone
+            nodejs diff apply
+            python build.py --target android --docker
   two:
     steps:
       - checkout
