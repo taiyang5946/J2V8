@@ -2,7 +2,7 @@ version: 2
 jobs:
   one:
     docker:
-    - image: docker:17.05.0-ce-git
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
       - setup_remote_docker
@@ -14,6 +14,8 @@ jobs:
             nodejs diff apply
             python build.py --target android --docker
   two:
+    docker:
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
       - run: echo "hi"
