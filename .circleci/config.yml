@@ -3,16 +3,14 @@ jobs:
   one:
     machine: true
     working_directory: ~/project
-    environment:
-      BASH_ENV: "~/project/j2v8-cli.sh"
     steps:
       - checkout
       - run: docker --version
       - run:
           name: Android build
           command: |
-            nodejs git clone
-            nodejs diff apply
+            python nodejs.py git clone
+            python nodejs.py diff apply
             python build.py --target android --arch arm --docker
   two:
     docker:
