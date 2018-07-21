@@ -13,8 +13,8 @@ jobs:
             python nodejs.py diff apply
             python build.py --target android --arch arm --docker
   two:
-    docker:
-      - image: docker:17.05.0-ce-git
+    machine: true
+    working_directory: ~/project
     steps:
       - checkout
       - run: echo "hi"
