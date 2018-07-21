@@ -5,7 +5,7 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
-      - setup_remote_docker
+      - run: docker --version
       - run:
           name: Android build
           command: |
