@@ -34,7 +34,7 @@ ENV NDK "/build/android-ndk-$NDK_VERSION"
 ENV PATH "$PATH:/build/android-gcc-toolchain:$NDK"
 
 # Create fake keymap file
-RUN mkdir /usr/local/android-sdk/tools/keymaps && \
+RUN mkdir -p /usr/local/android-sdk/tools/keymaps && \
     touch /usr/local/android-sdk/tools/keymaps/en-us
 
 # now install the rest of the tools that are more lightweight
