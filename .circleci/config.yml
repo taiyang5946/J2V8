@@ -9,7 +9,6 @@ jobs:
       - run:
           name: Android build
           command: |
-            apk update && apk add python
             source j2v8-cli.sh
             nodejs git clone
             nodejs diff apply
