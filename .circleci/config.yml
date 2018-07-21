@@ -3,10 +3,11 @@ jobs:
   one:
     machine: true
     working_directory: ~/project
+    environment:
+      BASH_ENV: "~/project/j2v8-cli.sh"
     steps:
       - checkout
       - run: docker --version
-      - run: source j2v8-cli.sh
       - run:
           name: Android build
           command: |
