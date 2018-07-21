@@ -17,20 +17,12 @@ RUN ./install.debian.packages.sh
 # install the heaviest dependencies first
 # (this keeps the big things cached in docker, even if we need to modify one of the shell scripts
 # of one of the lighter dependencies below)
-ENV NDK_VERSION "r13b"
-ENV NDK_NAME "android-ndk-$NDK_VERSION-linux-x86_64"
-RUN echo "Preparing Android NDK..." && \
-    mkdir -p /build && \
-    cd /build && \
-    curl -fSOL https://dl.google.com/android/repository/$NDK_NAME.zip && \
-    unzip $NDK_NAME.zip && \
-    rm $NDK_NAME.zip
+ENV NDK ${ANDROID_HOME}/ndk-bundle
 
 RUN echo "Preparing Android GCC-Toolchain..." && \
     mkdir -p /build && \
     cd /build && \
     git clone https://github.com/sjitech/android-gcc-toolchain
-ENV NDK "/build/android-ndk-$NDK_VERSION"
 ENV PATH "$PATH:/build/android-gcc-toolchain:$NDK"
 
 # Create fake keymap file

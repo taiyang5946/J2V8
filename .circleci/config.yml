@@ -6,10 +6,10 @@ jobs:
     steps:
       - checkout
       - run: docker --version
+      - run: source j2v8-cli.sh
       - run:
           name: Android build
           command: |
-            source j2v8-cli.sh
             nodejs git clone
             nodejs diff apply
             python build.py --target android --arch arm --docker
